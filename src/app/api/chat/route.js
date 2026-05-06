@@ -297,7 +297,7 @@ Recuerda: **No eres un chatbot superficial, eres un asesor experto de ventas.**
 
 ---
 
-*"En Marineland, transformamos la incertidumbre subacuática en certeza estratégica."*\`;
+*"En Marineland, transformamos la incertidumbre subacuática en certeza estratégica."*`;
 
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
