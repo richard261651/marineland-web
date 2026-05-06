@@ -55,22 +55,22 @@ export default function Home() {
         
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '800px' }}>
           <h1 style={{
-            fontSize: 'clamp(4rem, 8vw, 6rem)',
+            fontSize: 'clamp(3rem, 6vw, 5.5rem)',
             fontWeight: 900,
-            lineHeight: 1,
+            lineHeight: 1.1,
             marginBottom: '2rem',
-            letterSpacing: '-0.03em'
+            letterSpacing: '-0.02em'
           }}>
-            EXPLORANDO <br/>EL <span style={{ color: 'var(--brand-green)' }}>PROFUNDO</span>
+            EXPLORANDO LO DESCONOCIDO. <br/>DEFINIENDO EL <span style={{ color: 'var(--brand-green)' }}>FUTURO.</span>
           </h1>
           <p style={{
             fontSize: '1.25rem',
             color: '#a1a1aa',
             marginBottom: '3rem',
-            maxWidth: '600px',
+            maxWidth: '700px',
             lineHeight: 1.6
           }}>
-            Somos una compañía especializada en estudios geofísicos para la industria de cables submarinos y petróleo & gas. Con sede en Cartagena, brindamos soluciones globales en América Latina y el Caribe.
+            En Marineland, transformamos la incertidumbre subacuática en certeza estratégica. Como especialistas en geofísica marina, proporcionamos estudios de precisión para cables submarinos y operaciones de petróleo & gas. Operando desde Cartagena, llevamos soluciones avanzadas a clientes en toda América Latina y el Caribe, permitiéndoles construir infraestructura crítica con confianza.
           </p>
           <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             <Link href="#servicios" className="btn-vibrant">
