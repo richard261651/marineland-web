@@ -1,6 +1,12 @@
+"use client";
+
 import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <nav className="nav-container" style={{
       display: 'flex',
@@ -32,13 +38,51 @@ export default function Navbar() {
         </div>
       </div>
       
-      <div className="nav-desktop-links nav-links" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+      {/* Desktop Links */}
+      <div className="nav-desktop-links" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
         <Link href="#servicios" style={{ fontWeight: 600, color: '#fff' }}>Servicios</Link>
         <Link href="#nosotros" style={{ fontWeight: 600, color: '#fff' }}>Nosotros</Link>
         <Link href="https://wa.me/573163120220" target="_blank" className="btn-vibrant" style={{ padding: '0.5rem 1.5rem', fontSize: '0.9rem' }}>
           Cotizar
         </Link>
       </div>
+
+      {/* Mobile Menu Button */}
+      <button 
+        className="mobile-menu-btn" 
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label="Toggle menu"
+      >
+        {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+
+      {/* Mobile Dropdown Menu */}
+      {isMenuOpen && (
+        <div style={{
+          position: 'absolute',
+          top: '100%',
+          left: 0,
+          right: 0,
+          backgroundColor: 'var(--card-bg)',
+          borderBottom: '1px solid var(--card-border)',
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '1.5rem 5%',
+          gap: '1.5rem',
+          boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
+          zIndex: 49
+        }}>
+          <Link href="#servicios" onClick={() => setIsMenuOpen(false)} style={{ fontWeight: 600, color: '#fff', fontSize: '1.2rem', textAlign: 'center' }}>
+            Servicios
+          </Link>
+          <Link href="#nosotros" onClick={() => setIsMenuOpen(false)} style={{ fontWeight: 600, color: '#fff', fontSize: '1.2rem', textAlign: 'center' }}>
+            Nosotros
+          </Link>
+          <Link href="https://wa.me/573163120220" target="_blank" onClick={() => setIsMenuOpen(false)} className="btn-vibrant" style={{ padding: '0.8rem', fontSize: '1.1rem', textAlign: 'center', width: '100%' }}>
+            Cotizar
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }
