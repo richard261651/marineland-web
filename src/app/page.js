@@ -124,54 +124,80 @@ export default function Home() {
           {services.map((service) => {
             const isActive = activeService === service.id;
             return (
-              <div key={service.id} style={{ display: 'flex', flexDirection: 'column' }}>
-                <div 
-                  onClick={() => handleServiceClick(service.id)}
-                  className="service-card" 
-                  style={{ 
-                    cursor: 'pointer', 
-                    height: '100%', 
-                    display: 'flex', 
-                    flexDirection: 'column',
-                    border: isActive ? '1px solid var(--brand-green)' : '1px solid var(--card-border)',
-                    boxShadow: isActive ? '0 10px 30px rgba(164, 255, 0, 0.1)' : 'none'
-                  }}
-                >
-                  <div className="icon-wrapper">
-                    {service.icon}
-                  </div>
-                  <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'white' }}>{service.title}</h3>
-                  <p style={{ color: '#a1a1aa', fontSize: '1.1rem', lineHeight: 1.5, flex: 1 }}>
-                    {service.description}
-                  </p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: isActive ? '#fff' : 'var(--brand-green)', marginTop: '1.5rem', fontWeight: 'bold' }}>
-                    {isActive ? 'Ocultar detalles' : 'Ver detalles'} 
-                    {isActive ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </div>
+              <div 
+                key={service.id}
+                onClick={() => {
+                  handleServiceClick(service.id);
+                  if (activeService !== service.id) {
+                    setTimeout(() => {
+                      document.getElementById('service-details-panel')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                  }
+                }}
+                className="service-card" 
+                style={{ 
+                  cursor: 'pointer', 
+                  height: '100%', 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  border: isActive ? '2px solid var(--brand-green)' : '1px solid var(--card-border)',
+                  boxShadow: isActive ? '0 10px 30px rgba(164, 255, 0, 0.15)' : 'none',
+                  transform: isActive ? 'translateY(-5px)' : 'none',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div className="icon-wrapper" style={{ backgroundColor: isActive ? 'rgba(164, 255, 0, 0.1)' : '' }}>
+                  {service.icon}
                 </div>
-                
-                {/* Accordion Detail Section (Renders directly below the card logically, but visibly below in flex flow) */}
-                {isActive && (
-                  <div style={{
-                    marginTop: '2rem',
-                    padding: '2rem',
-                    backgroundColor: 'var(--card-bg)',
-                    borderRadius: '16px',
-                    border: '1px solid var(--brand-blue)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '2rem',
-                    animation: 'fadeIn 0.4s ease-out'
-                  }}>
-                    <div>
-                      <h4 style={{ color: 'var(--brand-green)', fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 'bold' }}>{service.detailSubtitle}</h4>
-                      <p style={{ color: '#e0e7ff', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '1rem' }}>
-                        <strong>¿Qué es?</strong> {service.detailWhat}
-                      </p>
-                      <p style={{ color: '#e0e7ff', fontSize: '1.05rem', lineHeight: 1.6 }}>
-                        <strong>¿Por qué solicitarlo?</strong> {service.detailWhy}
-                      </p>
+                <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'white' }}>{service.title}</h3>
+                <p style={{ color: '#a1a1aa', fontSize: '1.1rem', lineHeight: 1.5, flex: 1 }}>
+                  {service.description}
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: isActive ? '#fff' : 'var(--brand-green)', marginTop: '1.5rem', fontWeight: 'bold' }}>
+                  {isActive ? 'Ocultar detalles' : 'Ver detalles'} 
+                  {isActive ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Full-width Detail Panel */}
+        {activeService && (
+          <div 
+            id="service-details-panel"
+            style={{
+              marginTop: '4rem',
+              padding: '3rem',
+              backgroundColor: 'var(--background)',
+              borderRadius: '24px',
+              border: '1px solid var(--brand-blue)',
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '4rem',
+              alignItems: 'center',
+              boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
+              animation: 'fadeInUp 0.5s ease-out'
+            }}
+          >
+            {(() => {
+              const service = services.find(s => s.id === activeService);
+              return (
+                <>
+                  <div style={{ flex: '1 1 400px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                      <div style={{ color: 'var(--brand-green)' }}>{service.icon}</div>
+                      <h2 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#fff' }}>{service.title}</h2>
                     </div>
+                    <h4 style={{ color: 'var(--brand-green)', fontSize: '1.5rem', marginBottom: '1.5rem', fontWeight: 'bold' }}>{service.detailSubtitle}</h4>
+                    <p style={{ color: '#e0e7ff', fontSize: '1.15rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                      <strong style={{ color: '#fff' }}>¿Qué es?</strong><br/> {service.detailWhat}
+                    </p>
+                    <p style={{ color: '#e0e7ff', fontSize: '1.15rem', lineHeight: 1.7 }}>
+                      <strong style={{ color: '#fff' }}>¿Por qué solicitarlo?</strong><br/> {service.detailWhy}
+                    </p>
+                  </div>
+                  <div style={{ flex: '1 1 400px', position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}>
                     <CldImage 
                       src={service.imageId}
                       width={800}
@@ -181,16 +207,15 @@ export default function Home() {
                       style={{ 
                         width: '100%', 
                         height: 'auto', 
-                        borderRadius: '12px', 
-                        border: '1px solid #1f2937' 
+                        display: 'block'
                       }} 
                     />
                   </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                </>
+              );
+            })()}
+          </div>
+        )}
       </section>
 
       {/* About Section */}
@@ -219,6 +244,10 @@ export default function Home() {
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
       `}} />
