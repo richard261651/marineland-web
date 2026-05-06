@@ -1,3 +1,5 @@
+"use client";
+
 import { Waves, Compass, Droplets, Cable, ArrowRight, MessageSquare, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { CldImage } from 'next-cloudinary';
