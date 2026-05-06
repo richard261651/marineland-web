@@ -14,7 +14,7 @@ export default function Home() {
       title: "Hidrografía",
       description: "Levantamientos batimétricos (monohaz y multihaz) de alta precisión.",
       icon: <Waves size={40} strokeWidth={1.5} />,
-      imageId: "img-hidrografia",
+      imageId: "hidrografia_img_1778086991696_pxvsqi",
       detailSubtitle: "Mapeando lo invisible",
       detailWhat: "Realizamos levantamientos batimétricos (monohaz y multihaz) de altísima resolución para obtener mapas topográficos exactos del fondo marino.",
       detailWhy: "Es vital para garantizar la navegación segura, planificar rutas de tendido de cables y diseñar estructuras costeras u offshore. Sin un mapa preciso, cualquier proyecto marino opera a ciegas."
@@ -24,7 +24,7 @@ export default function Home() {
       title: "Geofísica Marina",
       description: "Geomorfología y estratificación: sonar de barrido lateral, perfilador de subsuelo, magnetómetro y toma de muestras.",
       icon: <Compass size={40} strokeWidth={1.5} />,
-      imageId: "img-geofisica",
+      imageId: "geofisica_img_1778087005280_sfjsed",
       detailSubtitle: "Mirando debajo de la superficie",
       detailWhat: "Utilizamos tecnología avanzada (sonar de barrido lateral, perfilador de subsuelo, magnetómetros) para estudiar la composición y los estratos ocultos bajo el lecho marino.",
       detailWhy: "Permite detectar peligros geológicos, objetos enterrados o municiones sin explotar (UXO). Indispensable antes de instalar plataformas petroleras o enterrar cables de telecomunicaciones."
@@ -34,7 +34,7 @@ export default function Home() {
       title: "Oceanografía",
       description: "Estudios de corrientes, oleajes y modelación de sedimentos para ingeniería de costas.",
       icon: <Droplets size={40} strokeWidth={1.5} />,
-      imageId: "img-oceanografia",
+      imageId: "oceanografia_img_1778087022898_bdzmpx",
       detailSubtitle: "Entendiendo la dinámica del mar",
       detailWhat: "Estudios detallados del comportamiento del agua: análisis de corrientes, medición de oleaje y modelación del transporte de sedimentos.",
       detailWhy: "El mar está vivo. Proveemos datos críticos sobre fuerzas hidrodinámicas necesarios para la ingeniería de costas, prevención de erosión y operaciones seguras en puertos o plataformas offshore."
@@ -44,7 +44,7 @@ export default function Home() {
       title: "Cables Submarinos",
       description: "Estudios, aterrizajes, enterramiento, instalación y mantenimiento.",
       icon: <Cable size={40} strokeWidth={1.5} />,
-      imageId: "img-cables",
+      imageId: "cables_img_1778087037549_hfz3gv",
       detailSubtitle: "Conectando continentes",
       detailWhat: "Un servicio integral que abarca desde los estudios de ruta previos, hasta los aterrizajes en costa (shore ends), enterramiento y mantenimiento de los cables.",
       detailWhy: "El 99% del internet global viaja bajo el mar, además de enlaces vitales de energía. Aseguramos que la instalación de estos cables críticos sea exitosa, duradera y libre de interferencias naturales o humanas."
