@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Waves, Compass, Droplets, Cable, ArrowRight, MessageSquare, ChevronDown, ChevronUp } from 'lucide-react';
 import Link from 'next/link';
+import { CldImage } from 'next-cloudinary';
 
 export default function Home() {
   const [activeService, setActiveService] = useState(null);
@@ -171,8 +172,11 @@ export default function Home() {
                         <strong>¿Por qué solicitarlo?</strong> {service.detailWhy}
                       </p>
                     </div>
-                    <img 
-                      src={`https://res.cloudinary.com/dre8hlhdo/image/upload/f_auto,q_auto/${service.imageId}`} 
+                    <CldImage 
+                      src={service.imageId}
+                      width={800}
+                      height={600}
+                      crop="fill"
                       alt={service.title} 
                       style={{ 
                         width: '100%', 
