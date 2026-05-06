@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import { MessageCircle, X, Send } from 'lucide-react';
+import { X, Send } from 'lucide-react';
+import { CldImage } from 'next-cloudinary';
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +55,15 @@ export default function Chatbot() {
         onMouseOver={e => e.currentTarget.style.transform = 'scale(1.1)'}
         onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
       >
-        <img src="/bot-icon.png" alt="Marineland AI" style={{ width: '120px', height: 'auto', filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))' }} />
+        <div style={{ width: '120px', filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))' }}>
+          <CldImage
+            src="bot-icon" // ESTE ES EL NOMBRE DEL ARCHIVO EN CLOUDINARY
+            width={120}
+            height={120}
+            crop="fit"
+            alt="Marineland AI"
+          />
+        </div>
       </button>
 
       {isOpen && (
