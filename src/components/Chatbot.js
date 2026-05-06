@@ -38,6 +38,7 @@ export default function Chatbot() {
     <>
       <button 
         onClick={() => setIsOpen(true)}
+        className="chatbot-btn"
         style={{
           position: 'fixed',
           bottom: '2rem',
@@ -67,7 +68,7 @@ export default function Chatbot() {
       </button>
 
       {isOpen && (
-        <div style={{
+        <div className="chatbot-window" style={{
           position: 'fixed',
           bottom: '2rem',
           right: '2rem',

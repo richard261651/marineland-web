@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <nav style={{
+    <nav className="nav-container" style={{
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
@@ -32,7 +32,7 @@ export default function Navbar() {
         </div>
       </div>
       
-      <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+      <div className="nav-desktop-links nav-links" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
         <Link href="#servicios" style={{ fontWeight: 600, color: '#fff' }}>Servicios</Link>
         <Link href="#nosotros" style={{ fontWeight: 600, color: '#fff' }}>Nosotros</Link>
         <Link href="https://wa.me/573163120220" target="_blank" className="btn-vibrant" style={{ padding: '0.5rem 1.5rem', fontSize: '0.9rem' }}>

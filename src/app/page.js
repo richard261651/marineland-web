@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section style={{
+      <section className="hero-section" style={{
         minHeight: '85vh',
         display: 'flex',
         flexDirection: 'column',
@@ -72,7 +72,7 @@ export default function Home() {
           }}>
             En Marineland, transformamos la incertidumbre subacuática en certeza estratégica. Como especialistas en geofísica marina, proporcionamos estudios de precisión para cables submarinos y operaciones de petróleo & gas. Operando desde Cartagena, llevamos soluciones avanzadas a clientes en toda América Latina y el Caribe, permitiéndoles construir infraestructura crítica con confianza.
           </p>
-          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+          <div className="hero-buttons" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             <Link href="#servicios" className="btn-vibrant">
               Nuestros Servicios <ArrowRight size={24} />
             </Link>

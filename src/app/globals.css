@@ -157,3 +157,45 @@ a {
 .section-title span {
   color: var(--brand-green);
 }
+
+/* --- OPTIMIZACIÓN MÓVIL --- */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .nav-desktop-links {
+    display: none;
+  }
+
+  .nav-container {
+    padding: 1rem 5% !important;
+  }
+
+  .hero-section {
+    padding-top: 2rem !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .chatbot-window {
+    width: calc(100vw - 3rem) !important;
+    height: 70vh !important;
+    right: 1.5rem !important;
+    bottom: 1.5rem !important;
+  }
+  
+  .chatbot-btn {
+    right: 1.5rem !important;
+    bottom: 1.5rem !important;
+  }
+}
