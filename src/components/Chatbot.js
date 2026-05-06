@@ -41,24 +41,20 @@ export default function Chatbot() {
           position: 'fixed',
           bottom: '2rem',
           right: '2rem',
-          backgroundColor: 'var(--brand-blue)',
-          color: 'white',
-          width: '60px',
-          height: '60px',
-          borderRadius: '50%',
+          backgroundColor: 'transparent',
+          border: 'none',
           display: isOpen ? 'none' : 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
-          boxShadow: '0 10px 25px -5px rgba(37,99,235,0.5)',
-          border: 'none',
           zIndex: 100,
-          transition: 'transform 0.3s'
+          transition: 'transform 0.3s',
+          padding: 0
         }}
         onMouseOver={e => e.currentTarget.style.transform = 'scale(1.1)'}
         onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
       >
-        <MessageCircle size={30} />
+        <img src="/bot-icon.png" alt="Marineland AI" style={{ width: '120px', height: 'auto', filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))' }} />
       </button>
 
       {isOpen && (
