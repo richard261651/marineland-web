@@ -318,7 +318,7 @@ Recuerda: **No eres un chatbot superficial, eres un asesor experto de ventas.**
   } catch (error) {
     console.error('Gemini API Error:', error);
     return NextResponse.json(
-      { reply: `Error del sistema: ${error.message}. Verifica que GEMINI_API_KEY esté configurada en Vercel.` },
+      { reply: 'Lo siento, en este momento mis servidores están experimentando una alta demanda. Por favor, inténtalo de nuevo en un minuto o contáctanos directamente a nuestro WhatsApp: +57 3163120220.' },
       { status: 500 }
     );
   }
